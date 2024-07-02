@@ -1,0 +1,144 @@
+@charset "utf-8";
+/* main.css 메인서식 */
+
+body{background-color: #ccc;}
+
+/* 상단헤더 */
+header{
+  position: relative;
+  width: 100%; height: 68px;
+  background: var(--main_color);
+  box-shadow: 0px 3px 3px rgba(0,0,0,0.25);
+  z-index: 1;
+}
+header h1{
+  width: 230px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+header .toggle, header .login_btn, header .t_back .c_btn{
+  position: absolute;
+  display: inline-block;
+  background-image: url('../images/btn_sprite.png');
+  width: 48px; height: 48px; 
+  text-indent: -9999px;
+}
+header .toggle{
+  left: 10px; top: 10px;
+  background-position: 0px 0px;
+}
+header .login_btn{
+  right: 10px; top: 10px;
+  background-position: -48px 0px;
+}
+header .log_btn{
+  position: absolute;
+  display: inline-block;
+  right: 10px; top: 20px;
+  text-align: right;
+  color: var(--t_color2);
+}
+header .t_back{
+  position: absolute; left: 0; top: 0;
+  width: 100%; height: 100vh;
+  box-sizing: border-box;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 9998;
+}
+header .t_back .c_btn{
+  right: 1rem; top: 10px;
+  background-position: -96px 0px;
+  z-index: 9998;
+  transition: 0.5s;
+  box-sizing: border-box;
+}
+header .t_back .c_btn:hover {
+  transform: rotate(180deg);
+}
+header .gnb{
+  position: absolute; left: -70%; top: 0;
+  z-index: 9999;
+  width: 70%; height: 100vh;
+  box-sizing: border-box;
+  background: var(--t_color2);
+  padding: 10px 2rem; box-sizing: border-box;
+  font-size: var(--f_size16); font-weight: bold;
+  box-sizing: border-box;
+}
+header .gnb > ul > li > a{
+  display: block;
+  /* margin-block: 1rem; */
+  padding-block: 1rem;
+  line-height: 200%;
+  border-bottom: 1px solid var(--t_color1);
+}
+header .gnb .logout{
+  text-align: right;
+  padding-block: 1rem;
+}
+
+header .lnb{display: none;}
+header .lnb a{
+  display: block;
+  font-weight: normal;
+  text-indent: 1rem;
+  padding-block: 1rem;
+}
+header .gnb_nav i{float: right;}
+
+.container {
+  width: 100%; height: 100%;
+  padding: 10px;
+  background:linear-gradient(to top, #ccc 50%, var(--main_color) 50%);
+  box-sizing: border-box;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, calc((100% - 20px) / 3));
+  grid-template-rows: repeat(3, calc((100% - 20px) / 3));
+	grid-template-areas:
+		"g01 g01 g02"
+		"g01 g01 g03"
+		"g04 g05 g06";
+}
+.container img{width: 100%;}
+.container .swiper{grid-area: g01;}
+.container a:nth-of-type(1){grid-area: g02;}
+.container a:nth-of-type(2){grid-area: g03;}
+.container a:nth-of-type(3){grid-area: g04;}
+.container a:nth-of-type(4){grid-area: g05;}
+.container a:nth-of-type(5){grid-area: g06;}
+
+.skypass{
+  padding-left: 10px;
+}
+
+/* 스와이퍼 슬라이드 */
+.swiper {
+  position: relative;
+  width: 100%; height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+.swiper-slide {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-slide a {width:100%;}
+.swiper-slide img {
+  width:100%;
+  object-fit: cover;
+}
+
+footer{
+  width: 100%; height: fit-content;
+  padding-bottom: 2rem;
+}
+footer .f_btn{padding-block: 2rem 1rem; text-align: center;}
+footer .f_btn a{padding-inline: 1rem; border-left: 1px solid var(--t_color2);}
+footer .f_btn a:first-of-type{border: none;}
+footer address{
+  padding-inline: 10%;
+  font-style: normal; line-height: 180%;
+}
